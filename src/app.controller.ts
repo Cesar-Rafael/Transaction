@@ -19,6 +19,11 @@ export class AppController implements OnModuleInit {
     this.appService.handleTransactionCreated(data);
   }
 
+  @EventPattern('anti-fraud_status')
+  handleAntifraudStatus(data: any) {
+    console.log(data);
+  }
+
   onModuleInit() {
     this.antiFraudClient.subscribeToResponseOf('detect_fraud');
   }

@@ -10,6 +10,7 @@ export class AppService {
   ) {}
 
   getHello(): string {
+    this.antiFraudClient.emit('detect_fraud_event', { test: 1 });
     return 'Hello World!';
   }
 
